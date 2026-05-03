@@ -15,18 +15,19 @@ SUPPORT_TICKETS_CSV = PROJECT_ROOT / "support_tickets" / "support_tickets.csv"
 PREDICTIONS_CSV = OUTPUT_DIR / "output.csv"
 
 # API Keys
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # models
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
-GENERATIVE_MODEL = os.getenv("GENERATIVE_MODEL")
 GROQ_MODEL = os.getenv("GROQ_MODEL")
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL")
 
-if not GEMINI_API_KEY:
-    raise ValueError("GEMINI_API_KEY environment variable is not set. Please set it in your .env file.")
+if not GROQ_API_KEY:
+    raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
+
+if not OPENROUTER_API_KEY:
+    raise ValueError("OPENROUTER_API_KEY environment variable is not set. Please set it in your .env file.")
 
 # Ensure output directory exists
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
