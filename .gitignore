@@ -27,7 +27,9 @@ build/
 Thumbs.db
 
 # local data / caches the participant may create
+data/
 data/index/
 data/embeddings/
+faiss_index/
 *.sqlite
 *.db
