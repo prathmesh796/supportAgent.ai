@@ -1,4 +1,5 @@
 from huggingface_hub import login, upload_folder, snapshot_download
+from config import HF_TOKEN
 
 def upload_data():
     login()
@@ -10,6 +11,7 @@ def download_data():
     local_path = snapshot_download(
         repo_id="prathmesh796/supportAgent.ai",
         repo_type="dataset",              
-        local_dir="./data",          
-        local_dir_use_symlinks=False       
+        local_dir="./data",  
+        token=HF_TOKEN
     )
+    print(local_path)
