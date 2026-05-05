@@ -28,6 +28,8 @@ class DocumentRetriever:
         documents = []
 
         for md_file in DATA_DIR.rglob("*.md"):
+            if md_file.name.lower() == "readme.md":
+                continue
             try:
                 with open(md_file, "r", encoding="utf-8") as f:
                     content = f.read()
