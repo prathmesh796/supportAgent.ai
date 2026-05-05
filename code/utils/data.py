@@ -7,7 +7,6 @@ def upload_data():
 
 def download_data():
     # Download your dataset files
-    login()
     local_path = snapshot_download(
         repo_id="prathmesh796/supportAgent.ai",
         repo_type="dataset",              
